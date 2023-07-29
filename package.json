@@ -1,0 +1,22 @@
+{
+  "name": "mycommit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "commit.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexdjoum/commit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexdjoum/commit/issues"
+  },
+  "homepage": "https://github.com/alexdjoum/commit#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
