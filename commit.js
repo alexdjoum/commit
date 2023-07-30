@@ -27,7 +27,7 @@ const server = http.createServer((req, res) => {
   res.end('Hello, World!');
   setInterval(commitAndPush, 86400000);
 
-    setInterval(commitAndPush, 350)
+
 
 });
 
