@@ -3,29 +3,31 @@ const { exec } = require('child_process');
 
 const http = require('http');
 
-const server = http.createServer((req, res) => {
-
-  function commitAndPush() {
-    console.log("Je vérifie ====>>>")
+function commitAndPush() {
     const date = new Date().toLocaleDateString('fr-FR');
     const commitMessage = `Commit automatique du ${date}`;
 
     exec(`git add . && git commit -m "${commitMessage}" && git push`, (err, stdout, stderr) => {
-      if (err) {
-        console.error(err);
-        return;
-      }
-      console.log(stdout);
+        if (err) {
+            console.error(err);
+            return;
+        }
+        console.log(stdout);
     });
-  }
+}
 
-  setInterval(commitAndPush(), 86400000);
+
+
+const server = http.createServer((req, res) => {
+
 
   res.statusCode = 200;
+  console.log('mon test est passé')
   res.setHeader('Content-Type', 'text/plain');
   res.end('Hello, World!');
+  setInterval(commitAndPush, 86400000);
 
-
+    setInterval(commitAndPush, 350)
 
 });
 
