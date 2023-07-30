@@ -25,7 +25,7 @@ const server = http.createServer((req, res) => {
   console.log('mon test est passé')
   res.setHeader('Content-Type', 'text/plain');
   res.end('Hello, World!');
-  setInterval(commitAndPush, 5000);
+  setInterval(commitAndPush, 90000);
 
 
 
