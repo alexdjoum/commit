@@ -1,7 +1,7 @@
 const cron = require('node-cron');
 const { exec } = require('child_process');
 
-cron.schedule('53 4 * * *', commitAndPush
+cron.schedule('01 5 * * *', commitAndPush
 );
 function commitAndPush() {
     const date = new Date().toLocaleDateString('fr-FR');
