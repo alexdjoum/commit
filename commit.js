@@ -1,8 +1,8 @@
 const cron = require('node-cron');
 const { exec } = require('child_process');
 
-cron.schedule('01 5 * * *', commitAndPush
-);
+/*cron.schedule('56 12 * * *', commitAndPush
+);*/
 function commitAndPush() {
     const date = new Date().toLocaleDateString('fr-FR');
     const commitMessage = `Commit automatique du ${date}`;
@@ -15,6 +15,8 @@ function commitAndPush() {
         console.log(stdout);
     });
 }
-setInterval(commitAndPush, 90000);
+
+commitAndPush();
+/*setInterval(commitAndPush, 90000);*/
 
 
