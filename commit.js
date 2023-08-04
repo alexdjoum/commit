@@ -1,5 +1,6 @@
 const cron = require('node-cron');
 const { exec } = require('child_process');
+const http = require('http');
 
 /*cron.schedule('56 12 * * *', commitAndPush
 );*/
@@ -16,7 +17,21 @@ function commitAndPush() {
     });
 }
 
+
+
+const hostname = 'localhost';
+const port = 3001;
 commitAndPush();
+const server = http.createServer((req, res) => {
+
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Hello World!\n');
+});
+
+server.listen(port, hostname, () => {
+    console.log(`Server running at http://${hostname}:${port}/`);
+});
 /*setInterval(commitAndPush, 90000);*/
 
 
