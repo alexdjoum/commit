@@ -20,7 +20,7 @@ function commitAndPush() {
 
 
 const hostname = 'localhost';
-const port = 3001;
+const port = 3000;
 commitAndPush();
 const server = http.createServer((req, res) => {
 
